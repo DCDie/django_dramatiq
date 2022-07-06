@@ -91,11 +91,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dramatiq',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        'NAME': config.get("DATABASE_NAME"),
+        'USER': config.get("DATABASE_USER"),
+        'PASSWORD': config.get("DATABASE_PASSWORD"),
+        'HOST': config.get("DATABASE_HOST"),
+        'PORT': config.get("DATABASE_PORT"),
     }
 }
 
